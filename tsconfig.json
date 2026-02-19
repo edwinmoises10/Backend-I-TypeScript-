@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",             /* Versión de JS a la que vamos a traducir */
+    "module": "CommonJS",           /* Estándar de módulos de Node clásico */
+    "rootDir": "./src",             /* Dónde está tu código fuente */
+    "outDir": "./dist",             /* Dónde caerá el código compilado (JS) */
+    "strict": true,                 /* Activa todas las reglas de validación estricta */
+    "esModuleInterop": true,        /* Permite importar módulos CommonJS como ES6 */
+    "skipLibCheck": true,           /* Salta chequeo de tipos en node_modules (ahorra tiempo) */
+    "forceConsistentCasingInFileNames": true /* Evita errores en Linux/Mac vs Windows */
+  },
+  "include": ["src/**/*"],          /* Qué archivos compilar */
+  "exclude": ["node_modules"]       /* Qué ignorar */
+}
