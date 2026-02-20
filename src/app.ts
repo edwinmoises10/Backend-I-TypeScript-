@@ -24,12 +24,58 @@ app.post("/api/products/create/", (req, res) => {
     }
 
     res.status(201).json(createProduct);
-    
   } catch (error) {
     res.status(500).json({ error: "Error Server" });
   }
 });
 
-app.listen(port, () =>
-  console.log(`Connected at Port:${port}, Server Express Works`),
-);
+app.get("/api/products/:pid", (req, res) => {
+  const { pid } = req.params;
+
+  try {
+    const locateById = productManager.findProductById(pid);
+    if ("error" in locateById) {
+      return res.status(400).json(locateById);
+    }
+
+    res.status(200).json(locateById);
+  } catch (e) {
+    res.status(500).json({ error: `Error` });
+  }
+});
+
+app.put("/api/products/:pid", (req, res) => {
+  const { pid } = req.params;
+
+  try {
+    const updateProduct = productManager.editProduct(pid, req.body);
+
+    if ("properties" in updateProduct || "error" in updateProduct) {
+      return res.status(404).json(updateProduct);
+    }
+
+    res.status(201).json(updateProduct);
+  } catch (e) {
+    res
+      .status(500)
+      .json({ error: "Internal Server Error: Database connectivity issue " });
+  }
+});
+
+app.delete("/api/products/:pid", (req, res) => {
+  const { pid } = req.params;
+
+  try {
+    const deletedProduct = productManager.deleteProduct(pid);
+
+    if ("error" in deletedProduct) {
+      return res.status(404).json(deletedProduct);
+    }
+
+    res.status(200).json(deletedProduct);
+  } catch (e) {
+    res.status(500).json({ error: `Internal Server Error` });
+  }
+});
+
+app.listen(port, () => console.log(`Express Server running on port ${port}`));

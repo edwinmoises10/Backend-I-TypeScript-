@@ -1,1 +1,44 @@
-[{"title":"Adidas ","description":"Description","code":"NK-AMP-10a26-01","price":87.99,"status":true,"stock":5,"category":"Classis","thumbnails":["https://placehold.co/600x400?text=Nike+Air+Max+1","https://placehold.co/600x400?text=Nike+Air+Max+2"],"id":"34bd1377-21f6-4708-b39b-316e9593b617"},{"title":"","description":"Description","code":"NK-AMP-d-01","price":87.99,"status":true,"stock":5,"category":"Classis","thumbnails":["https://placehold.co/600x400?text=Nike+Air+Max+1","https://placehold.co/600x400?text=Nike+Air+Max+2"],"id":"8e0a812a-f826-4b25-b4ff-731cc26ae662"},{"title":"Adidas ","description":"Description","code":"NK-AMP-12-01","price":87.99,"status":true,"stock":5,"category":"Classis","thumbnails":["https://placehold.co/600x400?text=Nike+Air+Max+1","https://placehold.co/600x400?text=Nike+Air+Max+2"],"id":"4cd2de51-43e4-46ba-91a6-a4caf2fbde6c"},{"title":"Adidas ","description":"Description","code":"NK-AMP-12-01","price":87.99,"status":true,"stock":5,"category":"Classis","thumbnails":["https://placehold.co/600x400?text=Nike+Air+Max+1","https://placehold.co/600x400?text=Nike+Air+Max+2"],"id":"e38688f8-d479-43e4-8e90-f27e41f67f28"},{"title":"Adidas ","description":"Description","code":"NK-AMP-12-01","price":87.99,"status":true,"stock":5,"category":"Classis","thumbnails":["https://placehold.co/600x400?text=Nike+Air+Max+1","https://placehold.co/600x400?text=Nike+Air+Max+2"],"id":"85b22f50-927b-4d49-a3ff-e37232bbe20a"},{"title":"Adidas ","description":"Description","code":"NK-AMP-12-01","price":87.99,"status":true,"stock":5,"category":"Classis","thumbnails":["https://placehold.co/600x400?text=Nike+Air+Max+1","https://placehold.co/600x400?text=Nike+Air+Max+2"],"id":"afba2fcf-14e2-47ad-9f57-1c3b09fab781"},{"title":"Prueba Postman","description":"Description Postman","code":"NK-AMP-12-02","price":87.99,"status":true,"stock":5,"category":"Classis","thumbnails":["https://placehold.co/600x400?text=Nike+Air+Max+1","https://placehold.co/600x400?text=Nike+Air+Max+2"],"id":"40f683cc-eed2-4cc8-89d3-c2e19fe08b68"},{"title":"Prueba Postman","description":"Description Postman","code":"NK-AMP-12-03","price":87.99,"status":true,"stock":5,"category":"Sport Postman","thumbnails":["https://placehold.co/600x400?text=Nike+Air+Max+1","https://placehold.co/600x400?text=Nike+Air+Max+2"],"id":"99bf6970-52aa-49be-8690-75fba8d3f608"}]
+[
+    {
+        "title": "Prueba Postman III",
+        "description": "Description Postman",
+        "code": "NKIII-AMP-12-03",
+        "price": 87.99,
+        "status": true,
+        "stock": 5,
+        "category": "Sport Postman",
+        "thumbnails": [
+            "https://placehold.co/600x400?text=Nike+Air+Max+1",
+            "https://placehold.co/600x400?text=Nike+Air+Max+2"
+        ],
+        "id": "d2713227-afc7-4992-a819-750f7267a636"
+    },
+    {
+        "title": "Prueba Postman II",
+        "description": "Description Postman",
+        "code": "NKII-AMP-12-03",
+        "price": 87.99,
+        "status": true,
+        "stock": 5,
+        "category": "Sport Postman",
+        "thumbnails": [
+            "https://placehold.co/600x400?text=Nike+Air+Max+1",
+            "https://placehold.co/600x400?text=Nike+Air+Max+2"
+        ],
+        "id": "88c30624-a938-44c7-94ea-135485025dc4"
+    },
+    {
+        "title": "Prueba Postman I",
+        "description": "Description Postman",
+        "code": "NKI-AMP-12-03",
+        "price": 87.99,
+        "status": true,
+        "stock": 5,
+        "category": "Sport Postman",
+        "thumbnails": [
+            "https://placehold.co/600x400?text=Nike+Air+Max+1",
+            "https://placehold.co/600x400?text=Nike+Air+Max+2"
+        ],
+        "id": "88f2101b-9f7f-4462-856e-49f8420b0af6"
+    }
+]
