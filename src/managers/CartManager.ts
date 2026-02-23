@@ -41,6 +41,33 @@ class CartManager {
     fs.writeFileSync(this.path, JSON.stringify(cartData));
     return cartData;
   };
+
+  addProduct = (cid: string, pid: string) => {
+    const getData = this.getCartProducts();
+    const checkCartID = getData.findIndex((e) => e.id === cid);
+    if (checkCartID <= -1) {
+      return {
+        error: `CART ID ${pid} not found`,
+      };
+    }
+
+    const checkProductsID = getData[checkCartID].products.findIndex(
+      (e) => e.id === pid,
+    );
+
+
+    if (checkProductsID <= -1) {
+      getData[checkCartID].products.push({
+        id: pid,
+        quantity: 1,
+      });
+    } else {
+      getData[checkCartID].products[checkProductsID].quantity += 1;
+    }
+
+    fs.writeFileSync(this.path, JSON.stringify(getData));
+    return getData;
+  };
 }
 
 export const cartManager = new CartManager("./data/cart.json");

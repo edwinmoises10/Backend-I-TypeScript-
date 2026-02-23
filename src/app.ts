@@ -3,7 +3,7 @@ import { productManager } from "./managers/ProductManager";
 import { cartManager } from "./managers/CartManager";
 
 const app = express();
-const port = 8080;
+const port = 8081;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -99,9 +99,30 @@ app.get("/api/carts/:cid", (req, res) => {
   }
 });
 
+app.post("/api/carts/:cid/products/:pid", (req, res) => {
+  const { cid, pid } = req.params;
+
+  try {
+    const locateById = productManager.findProductById(pid);
+    if ("error" in locateById) {
+      return res.status(400).json(locateById);
+    }
+    
+    const addProductById = cartManager.addProduct(cid, pid);
+
+    if ("error" in addProductById) {
+      return res.status(404).json(addProductById);
+    }
+
+    res.status(201).json(addProductById);
+  } catch (e) {
+    res.status(500).json("Internal Server error ");
+  }
+});
+
 app.post("/api/carts/", (req, res) => {
-  const createCart = cartManager.createCart()
-  res.status(201).json(createCart)
+  const createCart = cartManager.createCart();
+  res.status(201).json(createCart);
 });
 
 app.listen(port, () => console.log(`Express Server running on port ${port}`));
