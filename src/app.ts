@@ -1,5 +1,6 @@
 import express from "express";
 import { productManager } from "./managers/ProductManager";
+import { cartManager } from "./managers/CartManager";
 
 const app = express();
 const port = 8080;
@@ -76,6 +77,31 @@ app.delete("/api/products/:pid", (req, res) => {
   } catch (e) {
     res.status(500).json({ error: `Internal Server Error` });
   }
+});
+//!API/CART
+
+app.get("/api/carts/", (req, res) => {
+  const getCartData = cartManager.getCartProducts();
+  res.status(200).json(getCartData);
+});
+
+app.get("/api/carts/:cid", (req, res) => {
+  const { cid } = req.params;
+  try {
+    const getCartById = cartManager.getCartById(cid);
+    if ("error" in getCartById) {
+      return res.status(404).json(getCartById);
+    }
+
+    res.status(200).json(getCartById);
+  } catch (e) {
+    res.status(500).json("Internal Server Error");
+  }
+});
+
+app.post("/api/carts/", (req, res) => {
+  const createCart = cartManager.createCart()
+  res.status(201).json(createCart)
 });
 
 app.listen(port, () => console.log(`Express Server running on port ${port}`));

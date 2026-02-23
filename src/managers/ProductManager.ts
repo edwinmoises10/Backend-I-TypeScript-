@@ -3,7 +3,6 @@ import fs from "fs";
 import { v4 as uuidv4 } from "uuid";
 import { ProductSchema } from "../schemas/product.schema";
 import { z } from "zod";
-import { de } from "zod/v4/locales";
 
 class ProductManager {
   path: string;
